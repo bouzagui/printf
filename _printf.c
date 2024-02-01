@@ -1,6 +1,4 @@
 #include "main.h"
-#include <limits.h>
-#include <stdio.h>
 /**
  * _printf - prints the characters that it holds+
  * @format: contains a string of characters and specifiers
@@ -13,6 +11,10 @@ int _printf(const char *format, ...)
 	va_list op;
 
 	va_start(op, format);
+	if (format == NULL)
+	{
+		exit(-1);
+	}
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1) != '\0')
