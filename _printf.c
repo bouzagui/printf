@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	}
 	while (*format)
 	{
-		if (*format == '%')
+		if (*format == '%' && *(format + 1) != '\0')
 		{
 			format++;
 			switch (*format)
@@ -34,7 +34,6 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					count += _putchar('%');
-					count += _putchar(*format);
 					break;
 			}
 		}
