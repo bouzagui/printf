@@ -33,8 +33,8 @@ int _printf(const char *format, ...)
 					count += _putchar('%');
 					break;
 				default:
-					count += _putchar(*format);
 					count += _putchar('%');
+					count += _putchar(*format);
 					break;
 			}
 		}
